@@ -13,8 +13,8 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
     - [x] Lead sheet: Text-only
 - [x] Milestone 2
     - [x] Playback: Root notes
-- [ ] Milestone 3
-    - [ ] Playback: Chords
+- [x] Milestone 3
+    - [x] Playback: Chords
 - [ ] Milestone 4
     - [ ] Lead sheet: graphical
 

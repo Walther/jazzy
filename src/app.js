@@ -2,9 +2,10 @@ const tonal = require('tonal');
 const fp = require('lodash/fp');
 const Tone = require('tone');
 var synth = new Tone.Synth().toMaster();
+var polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 
 const getScale = () => {
-    let root = _.sample(tonal.Note.names());
+    let root = _.sample(tonal.Note.names(' b'));
     let scaleType = 'major';
     let scale = root + ' ' + scaleType;
     return scale;
@@ -56,22 +57,22 @@ let jazz = {
 };
 
 writeSheet(jazz);
-let toneNotes = chords.map(chord => {
-    let root = tonal.Chord.notes(chord)[0];
-    return root + '3';
-    // TODO: saner handling.
-    // Tone requires absolute note, and doesn't tolerate double sharps
+let toneChords = chords.map(chord => {
+    // Tone.js requires absolute note, i.e. octave number in addition to the note name
+    // Sadly some chords sound bad because of this naive implemenation, when a maj7 is played as a min2.
+    // TODO: correct implementation of absolute notes!
+    return tonal.Chord.notes(chord).map(note => note + '3');
 });
 
-console.log('ToneNotes: ' + toneNotes);
+console.log('ToneChords: ' + JSON.stringify(toneChords));
 
-toneNotes.map((toneNote, index) => {
+toneChords.map((toneNotes, index) => {
     Tone.Transport.scheduleRepeat(
-        function(time) {
-            synth.triggerAttackRelease(toneNote, '1n', time);
+        time => {
+            polySynth.triggerAttackRelease(toneNotes, '1n', time); // Repeat a 1n = whole note long chord
         },
-        '4m',
-        index + 'm'
+        '4m', // every 4 measures
+        index + 'm' // at offset index measures
     );
 });
 
