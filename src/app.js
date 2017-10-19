@@ -4,7 +4,7 @@ const fp = require('lodash/fp');
 const getScale = () => {
     let root = _.sample(tonal.Note.names());
     let scaleType = 'major';
-    let scale = tonal.Scale.notes(root, scaleType);
+    let scale = root + ' ' + scaleType;
     return scale;
 };
 
@@ -23,13 +23,30 @@ const getChords = scale => {
             type: 'maj7'
         }
     ];
+    let notes = tonal.Scale.notes(scale);
     let chords = progression.map(
-        ({ degree, type }) => scale[degree - 1] + type
+        ({ degree, type }) => notes[degree - 1] + type
     );
     return chords;
 };
 
+const writeSheet = data => {
+    let prettyPrint = 'Scale: ' + data.scale;
+    prettyPrint += '<br> Chords: ' + data.chords.join(', ');
+
+    document.getElementById('jazz').innerHTML = prettyPrint;
+};
+
+/* --- --- --- */
+
 console.log('Hello, Jazz!');
+
 let scale = getScale();
-console.log("Here's a scale for you: " + scale);
-console.log('Here are chords for a ii V I in it:' + getChords(scale));
+let chords = getChords(scale);
+
+let jazz = {
+    scale,
+    chords
+};
+
+writeSheet(jazz);
