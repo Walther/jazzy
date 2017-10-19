@@ -11,8 +11,8 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
     - [x] Pick a root note & scale
     - [x] Build basic chord progressions: ii V I
     - [x] Lead sheet: Text-only
-- [ ] Milestone 2
-    - [ ] Playback: Root notes
+- [x] Milestone 2
+    - [x] Playback: Root notes
 - [ ] Milestone 3
     - [ ] Playback: Chords
 - [ ] Milestone 4
