@@ -4,9 +4,9 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
 
 ## Todo
 
-- [ ] Milestone 0
+- [x] Milestone 0
     - [x] Set up github project
-    - [ ] Set up webpack
+    - [x] Set up webpack
 - [ ] Milestone 1
     - [ ] Pick a root note
     - [ ] Build basic chord progressions: ii V I
