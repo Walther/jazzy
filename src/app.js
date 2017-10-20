@@ -1,8 +1,8 @@
 const teoria = require('teoria');
 const sample = require('lodash/sample');
-const Tone = require('tone');
-var synth = new Tone.Synth().toMaster();
-var polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+const PolySynth = require('Tone').PolySynth;
+const polySynth = new PolySynth().toMaster();
+const Transport = require('Tone').Transport;
 
 const getRoot = () =>
     // TODO: sane root options
@@ -58,7 +58,7 @@ const writeSheet = data => {
 const preparePlaybackForSheet = data => {
     data.chords.map((chord, index) => {
         let notes = chord.notes().map(note => note.toString());
-        Tone.Transport.scheduleRepeat(
+        Transport.scheduleRepeat(
             time => {
                 polySynth.triggerAttackRelease(notes, '1n', time); // Repeat a 1n = whole note long chord
             },
@@ -72,7 +72,7 @@ const prepareUI = () => {
     let playing = false;
     document.querySelector('#playback').addEventListener('click', event => {
         playing = !playing;
-        playing ? Tone.Transport.start() : Tone.Transport.stop(); // TODO: stop immediately
+        playing ? Transport.start() : Transport.stop(); // TODO: stop immediately
     });
     document.querySelector('#new').addEventListener('click', event => {
         // TODO: actual call to re-init. NOTE: requires proper clearing of Tone Transport stack!
