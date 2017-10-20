@@ -1472,7 +1472,11 @@ const getChords = scale => {
 const writeSheet = data => {
     let prettyPrint = '';
     prettyPrint += 'Key: ' + data.key;
-    prettyPrint += '<br>Scale: ' + data.scale;
+    prettyPrint +=
+        '<br>Scale: ' +
+        data.scale
+            .simple()
+            .map(name => (name = name[0].toUpperCase() + name.slice(1)));
     prettyPrint += '<br>Chords: ' + data.chords.join(', ');
 
     document.getElementById('jazz').innerHTML = prettyPrint;
@@ -1513,7 +1517,7 @@ const prepareSheet = () => {
 
     let sheet = {
         key,
-        scale: scale.simple(),
+        scale,
         chords
     };
 
