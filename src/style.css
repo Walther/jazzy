@@ -32,6 +32,37 @@ h1 {
     background: #575855;
 }
 
-#app * {
+h1, div, table, button {
     margin: 1rem;
+}
+
+#chords {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+table :first-child {
+    border-style: none dotted none solid;
+    border-width: 1px;
+}
+
+table :last-child {
+    border-style: none double none none;
+    border-width: 1px;
+}
+
+table td {
+    border-style: none dotted none none;
+    padding: 0.5em;
+    border-width: 1px;
+}
+
+button {
+    display: inline-block;
+    height: 2em;
+    background: #fd971f;
+    border:none;
+    border-radius: 0;
+    font-size: 1em;
+    color: #272822;
 }
