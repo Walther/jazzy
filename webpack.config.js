@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 const webpack = require('webpack');
 const path = require('path');
 
@@ -11,7 +13,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html' }),
-        new CopyWebpackPlugin([{ from: './src/style.css' }])
+        new CopyWebpackPlugin([{ from: './src/style.css' }]),
+        new UglifyJSPlugin()
     ],
     node: {
         console: true,
