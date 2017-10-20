@@ -1476,7 +1476,8 @@ const writeSheet = data => {
         '<br>Scale: ' +
         data.scale
             .simple()
-            .map(name => (name = name[0].toUpperCase() + name.slice(1)));
+            .map(name => (name = name[0].toUpperCase() + name.slice(1)))
+            .join(', ');
     prettyPrint += '<br>Chords: ' + data.chords.join(', ');
 
     document.getElementById('jazz').innerHTML = prettyPrint;
