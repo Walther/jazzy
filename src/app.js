@@ -1,12 +1,12 @@
 const teoria = require('teoria');
-const fp = require('lodash/fp');
+const sample = require('lodash/sample');
 const Tone = require('tone');
 var synth = new Tone.Synth().toMaster();
 var polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 
 const getRoot = () =>
     // TODO: sane root options
-    _.sample(['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']);
+    sample(['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']);
 
 const getScale = (root, scaleType) => teoria.note(root).scale(scaleType);
 
