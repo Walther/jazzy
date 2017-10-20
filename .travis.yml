@@ -6,3 +6,6 @@ script:
 branches:
   only:
     - master
+env:
+  global:
+    - ENCRYPTION_LABEL=35cfa241f843
