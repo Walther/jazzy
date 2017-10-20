@@ -16,15 +16,18 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
 - [x] Milestone 3
     - [x] Playback: Chords
 - [ ] Milestone 4
-    - Basic UI elements:
-        - play / stop button
-        - randomize root note
-        - pick root note
+    - [ ] Basic UI elements:
+        - [ ] play / stop button
+        - [ ] randomize root note
+        - [ ] pick root note
 
 ## Wishing well
 
+- Continuous integration
 - Lead sheet: graphical
 - Walking bass algorithm
+- Sections support? Proper song form?
+- Shareable URLs that contain song data
 - Brush drums
 - Melody algorithm
 - A great unique name for the project
