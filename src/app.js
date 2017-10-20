@@ -74,7 +74,7 @@ let chords = getChords(scale);
 
 let jazz = {
     key,
-    scale: _.startCase(scale.simple()),
+    scale: scale.simple(),
     chords
 };
 
