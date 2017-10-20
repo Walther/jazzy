@@ -46,7 +46,7 @@ const writeSheet = data => {
     document.getElementById('jazz').innerHTML = prettyPrint;
 };
 
-const playSheet = data => {
+const preparePlaybackForSheet = data => {
     data.chords.map((chord, index) => {
         let notes = chord.notes().map(note => note.toString());
         Tone.Transport.scheduleRepeat(
@@ -57,26 +57,42 @@ const playSheet = data => {
             index + 'm' // at offset index measures
         );
     });
+};
 
-    Tone.Transport.start();
+const prepareUI = () => {
+    let playing = false;
+    document.querySelector('#playback').addEventListener('click', event => {
+        playing = !playing;
+        playing ? Tone.Transport.start() : Tone.Transport.stop(); // TODO: stop immediately
+    });
+    document.querySelector('#new').addEventListener('click', event => {
+        // TODO: actual call to re-init. NOTE: requires proper clearing of Tone Transport stack!
+        location.reload();
+    });
+};
+
+const prepareSheet = () => {
+    let root = getRoot();
+    let absoluteRoot = root + '3';
+    let scaleType = 'major';
+    let key = root + ' ' + scaleType;
+    let scale = getScale(absoluteRoot, scaleType);
+    let chords = getChords(scale);
+
+    let sheet = {
+        key,
+        scale: scale.simple(),
+        chords
+    };
+
+    return sheet;
 };
 
 /* --- --- --- */
 
 console.log('Hello, Jazz!');
 
-let root = getRoot();
-let absoluteRoot = root + '3';
-let scaleType = 'major';
-let key = root + ' ' + scaleType;
-let scale = getScale(absoluteRoot, scaleType);
-let chords = getChords(scale);
-
-let jazz = {
-    key,
-    scale: scale.simple(),
-    chords
-};
-
-writeSheet(jazz);
-playSheet(jazz);
+let sheet = prepareSheet();
+writeSheet(sheet);
+preparePlaybackForSheet(sheet);
+prepareUI();

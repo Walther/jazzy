@@ -17,11 +17,10 @@
     - [x] Playback: Chords
 - [x] Milestone 4
     - [x] Continuous deployment with Travis & gh-pages
-- [ ] Milestone 5
-    - [ ] Basic UI elements:
-        - [ ] play / stop button
-        - [ ] randomize root note
-        - [ ] pick root note
+- [x] Milestone 5
+    - [x] Basic UI elements:
+        - [x] play / stop button
+        - [x] randomize root note
 
 ## Wishing well
 
