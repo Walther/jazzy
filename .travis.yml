@@ -3,3 +3,13 @@ node_js:
   - "8"
 script:
   - yarn run build
+before_install:
+  - openssl aes-256-cbc -K $encrypted_35cfa241f843_key -iv $encrypted_35cfa241f843_iv -in publish-key.enc -out publish-key -d
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  target_branch: gh-pages
+  on:
+    branch: master
