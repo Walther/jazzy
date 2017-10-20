@@ -1,6 +1,6 @@
 # jazzy
 
-Jazzy aims to be an in-browser, minimalist Jazz experience.
+[Jazzy](https://walther.github.io/jazzy/) is an in-browser, minimalist Jazz experience.
 
 ## Todo
 
@@ -15,7 +15,9 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
     - [x] Playback: Root notes
 - [x] Milestone 3
     - [x] Playback: Chords
-- [ ] Milestone 4
+- [x] Milestone 4
+    - [x] Continuous deployment with Travis & gh-pages
+- [ ] Milestone 5
     - [ ] Basic UI elements:
         - [ ] play / stop button
         - [ ] randomize root note
@@ -23,7 +25,6 @@ Jazzy aims to be an in-browser, minimalist Jazz experience.
 
 ## Wishing well
 
-- Continuous integration
 - Lead sheet: graphical
 - Walking bass algorithm
 - Sections support? Proper song form?
