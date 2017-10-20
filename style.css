@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,300,800);
+
+/* Color Scheme */
+.darkgrey   { color: #272822; }
+.black      { color: #101010; }
+.white      { color: #ffffff; }
+.grey       { color: #75715e; }
+.lightgrey  { color: #575855; }
+.pink       { color: #f92672; }
+.orange     { color: #fd971f; }
+.yellow     { color: #f6f080; }
+.green      { color: #a6e22e; }
+.blue       { color: #4eb4fa; }
+.purple     { color: #ae81ff; }
+
+html, body {
+    background-color: #272822;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    color: fd971f;
+}
+
+#app {
+    width:100%;
+    display:block;
+    max-width: 40em;
+    margin: 1em auto;
+    background: #575855;
+}
+
+#app * {
+    margin: 1rem;
+}
