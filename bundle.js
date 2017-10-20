@@ -1470,7 +1470,7 @@ const getChords = scale => {
 };
 
 const writeSheet = data => {
-    let prettyPrint = '';
+    let prettyPrint = '<div id="info">';
     prettyPrint += 'Key: ' + data.key;
     prettyPrint +=
         '<br>Scale: ' +
@@ -1478,9 +1478,13 @@ const writeSheet = data => {
             .simple()
             .map(name => (name = name[0].toUpperCase() + name.slice(1)))
             .join(', ');
-    prettyPrint += '<br>Chords: ' + data.chords.join(', ');
+    prettyPrint += '</div>';
 
-    document.getElementById('jazz').innerHTML = prettyPrint;
+    prettyPrint += '<table id="chords"><tr>';
+    data.chords.map(chord => (prettyPrint += '<td>' + chord + '</td>'));
+    prettyPrint += '</tr></table>';
+
+    document.getElementById('app').innerHTML += prettyPrint;
 };
 
 const preparePlaybackForSheet = data => {
