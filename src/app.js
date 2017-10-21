@@ -1,8 +1,8 @@
 const teoria = require('teoria');
 const sample = require('lodash/sample');
-const PolySynth = require('Tone').PolySynth;
+const PolySynth = require('tone').PolySynth;
 const polySynth = new PolySynth().toMaster();
-const Transport = require('Tone').Transport;
+const Transport = require('tone').Transport;
 
 const getRoot = () =>
     // TODO: sane root options

@@ -14,7 +14,14 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html' }),
         new CopyWebpackPlugin([{ from: './src/style.css' }]),
-        new UglifyJSPlugin()
+        new UglifyJSPlugin({
+            uglifyOptions: {
+                beautify: false,
+                ecma: 6,
+                compress: true,
+                comments: false
+            }
+        })
     ],
     node: {
         console: true,
