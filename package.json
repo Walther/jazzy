@@ -12,6 +12,7 @@
         "tone": "^0.11.11"
     },
     "scripts": {
-        "build": "webpack"
+        "build": "webpack",
+        "dev": "webpack-dev-server"
     }
 }
