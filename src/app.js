@@ -10,26 +10,56 @@ const getRoot = () =>
 
 const getScale = (root, scaleType) => teoria.note(root).scale(scaleType);
 
-const getChords = scale => {
-    //TODO: this assumes major scale
-    let progression = [
-        {
-            degree: 2,
-            type: 'm7'
-        },
-        {
-            degree: 5,
-            type: '7'
-        },
-        {
-            degree: 1,
-            type: 'maj7'
-        },
-        {
-            degree: 1,
-            type: 'maj7'
-        }
+const getProgression = () => {
+    const progressions = [
+        // TODO: this assumes major scale
+        // Also, doesn't allow stuff like bII7
+        // Convert to using interval notation instead of "degree"
+        [
+            // ii V7 I I
+            {
+                degree: 2,
+                type: 'm7'
+            },
+            {
+                degree: 5,
+                type: '7'
+            },
+            {
+                degree: 1,
+                type: 'maj7'
+            },
+            {
+                degree: 1,
+                type: 'maj7'
+            }
+        ],
+        [
+            // I-vi-ii-V7
+            {
+                degree: 1,
+                type: 'maj7'
+            },
+            {
+                degree: 6,
+                type: 'm7'
+            },
+            {
+                degree: 2,
+                type: 'm7'
+            },
+            {
+                degree: 5,
+                type: '7'
+            }
+        ]
     ];
+    return sample(progressions);
+};
+
+const getChords = scale => {
+    // TODO: refactor with getProgression
+    let progression = getProgression();
     let notes = scale.notes();
     let chords = progression.map(({ degree, type }) => {
         return teoria.chord(notes[degree - 1], type);
