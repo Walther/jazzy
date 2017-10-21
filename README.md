@@ -21,15 +21,25 @@
     - [x] Basic UI elements:
         - [x] play / stop button
         - [x] randomize root note
+- [ ] Milestone 6
+    - [ ] Project cleaning: separate into different files
+    - [ ] Project cleaning: refactor progressions
+    - [ ] Progressions with chord substitutions
+- [ ] Milestone 7
+    - [ ] Bass: separate instrument
+    - [ ] Bass: basic basslines based on progression and key
+- [ ] Milestone 8
+    - [ ] Proper instrument sound: bass
+    - [ ] Proper instrument sound: piano
 
 ## Wishing well
 
+- Melody: separate instrument
+- Melody: procedural generation
 - Lead sheet: graphical
-- Walking bass algorithm
+- Lead sheet: export PDF
 - Sections support? Proper song form?
-- Shareable URLs that contain song data
-- Brush drums
-- Melody algorithm
+- Shareable URLs that contain song data?
 - A great unique name for the project
 - Actual rhythm / comping? How to define?
-- More chord progressions? Which ones?
+- More chord progressions
