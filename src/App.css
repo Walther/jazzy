@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,300,800);
+
+/* Color Scheme */
+.darkgrey   { color: #272822; }
+.black      { color: #101010; }
+.white      { color: #ffffff; }
+.grey       { color: #75715e; }
+.lightgrey  { color: #575855; }
+.pink       { color: #f92672; }
+.orange     { color: #fd971f; }
+.yellow     { color: #f6f080; }
+.green      { color: #a6e22e; }
+.blue       { color: #4eb4fa; }
+.purple     { color: #ae81ff; }
+
+.App {
+  width:100%;
+  display:block;
+  max-width: 40em;
+  margin: 1em auto;
+  background: #575855;
+}
+
+
+h1, div, table, button, header {
+    //TODO: proper positioning;
+    margin: 1rem;
+}
+
+h1 {
+  color: #fd971f;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+table :first-child {
+  border-style: none dotted none solid;
+  border-width: 1px;
+}
+
+table :last-child {
+  border-style: none double none none;
+  border-width: 1px;
+}
+
+table td {
+  border-style: none dotted none none;
+  padding: 0.5em;
+  border-width: 1px;
+}
+
+button {
+  display: inline-block;
+  height: 2em;
+  background: #fd971f;
+  border:none;
+  border-radius: 0;
+  font-size: 1em;
+  color: #272822;
+}
+
+#chords {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
