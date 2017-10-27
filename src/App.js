@@ -58,7 +58,14 @@ class App extends Component {
             prettyPrint += '<div id="chords">';
             data.chords.map(
                 chord =>
-                    (prettyPrint += "<span class='chord'>" + chord + '</span>')
+                    (prettyPrint +=
+                        "<span class='chord'>" +
+                        chord.root.name().toUpperCase() +
+                        chord.root.accidental() +
+                        '<sup>' +
+                        chord.symbol +
+                        '</sup>' +
+                        '</span>')
             );
             prettyPrint += '</div>';
             return { __html: prettyPrint };

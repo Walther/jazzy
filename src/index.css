@@ -5,3 +5,9 @@ body {
   color: white;
   font-family: "Open Sans", sans-serif;
 }
+
+@media only screen and (min-width: 60em) {
+  .chord {
+    font-size: 150%;
+  }
+}

@@ -29,28 +29,27 @@ h1, button, #info, .chord {
 
 h1 {
   color: #fd971f;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 800;
   margin-top: 0;
 }
 
 button {
   display: inline-block;
-  height: 2em;
+  height: 2rem;
   background: #fd971f;
   border:none;
   border-radius: 0;
-  font-size: 1em;
+  font-size: 1rem;
   color: #272822;
 }
 
 #chords {
-  font-size: 2em;
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
 .chord {
-  margin-right: 1em;
   display: inline-block;
 }
 
