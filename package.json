@@ -1,5 +1,7 @@
 {
     "private": true,
+    "name": "jazzy",
+    "homepage": "http://walther.github.io/jazzy",
     "devDependencies": {
         "react-scripts": "1.0.14",
         "serve": "^6.3.1"
