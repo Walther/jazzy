@@ -55,9 +55,12 @@ class App extends Component {
                     .join(', ');
             prettyPrint += '</div>';
 
-            prettyPrint += '<table id="chords"><tr>';
-            data.chords.map(chord => (prettyPrint += '<td>' + chord + '</td>'));
-            prettyPrint += '</tr></table>';
+            prettyPrint += '<div id="chords">';
+            data.chords.map(
+                chord =>
+                    (prettyPrint += "<span class='chord'>" + chord + '</span>')
+            );
+            prettyPrint += '</div>';
             return { __html: prettyPrint };
         };
         return (
@@ -68,7 +71,7 @@ class App extends Component {
                         Play / Pause
                     </button>
                     <button id="new" onClick={e => this.newSheet()}>
-                        New jazz
+                        New Jazz
                     </button>
                 </header>
                 <div dangerouslySetInnerHTML={writeSheet(this.state.sheet)} />

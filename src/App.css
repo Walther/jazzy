@@ -17,13 +17,13 @@
   width:100%;
   display:block;
   max-width: 40em;
-  margin: 1em auto;
+  margin: 0 auto;
   background: #575855;
+  padding-bottom: 1rem;
 }
 
 
-h1, div, table, button, header {
-    //TODO: proper positioning;
+h1, button, #info, .chord {
     margin: 1rem;
 }
 
@@ -31,22 +31,7 @@ h1 {
   color: #fd971f;
   font-size: 2em;
   font-weight: 800;
-}
-
-table :first-child {
-  border-style: none dotted none solid;
-  border-width: 1px;
-}
-
-table :last-child {
-  border-style: none double none none;
-  border-width: 1px;
-}
-
-table td {
-  border-style: none dotted none none;
-  padding: 0.5em;
-  border-width: 1px;
+  margin-top: 0;
 }
 
 button {
@@ -62,6 +47,11 @@ button {
 #chords {
   font-size: 2em;
   font-weight: 800;
+}
+
+.chord {
+  margin-right: 1em;
+  display: inline-block;
 }
 
 @keyframes App-logo-spin {
