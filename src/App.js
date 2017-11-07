@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import jazz from './Jazz';
+import SheetViewer from './SheetViewer';
 const PolySynth = require('tone').PolySynth;
 const polySynth = new PolySynth().toMaster();
 const Transport = require('tone').Transport;
@@ -43,33 +44,6 @@ class App extends Component {
         window.location.reload();
     }
     render() {
-        const writeSheet = data => {
-            //TODO: flexbox approach?
-            let prettyPrint = '<div id="info">';
-            prettyPrint += 'Key: ' + data.key;
-            prettyPrint +=
-                '<br>Scale: ' +
-                data.scale
-                    .simple()
-                    .map(name => (name = name[0].toUpperCase() + name.slice(1)))
-                    .join(', ');
-            prettyPrint += '</div>';
-
-            prettyPrint += '<div id="chords">';
-            data.chords.map(
-                chord =>
-                    (prettyPrint +=
-                        "<span class='chord'>" +
-                        chord.root.name().toUpperCase() +
-                        chord.root.accidental() +
-                        '<sup>' +
-                        chord.symbol +
-                        '</sup>' +
-                        '</span>')
-            );
-            prettyPrint += '</div>';
-            return { __html: prettyPrint };
-        };
         return (
             <div className="App">
                 <header className="App-header">
@@ -81,7 +55,7 @@ class App extends Component {
                         New Jazz
                     </button>
                 </header>
-                <div dangerouslySetInnerHTML={writeSheet(this.state.sheet)} />
+                <SheetViewer sheet={this.state.sheet} />
             </div>
         );
     }
